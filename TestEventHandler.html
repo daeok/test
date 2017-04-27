@@ -1,0 +1,58 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<link href="http://d3n3e0roqdrhcc.cloudfront.net/assets/application-1ab64b3c6714b2233a8ae0b7dd5b5f96.css" media="screen" rel="stylesheet" type="text/css" />
+<script>
+$(document).ready(function() {
+	  $(".tour").on("click", function() {
+	    alert("This should not be called");
+	  });
+	  $(".see-photos").on("click", function(event) {
+	    $(this).closest(".tour").find(".photos").slideToggle();
+	  });
+	  $(".stopPropagation").on("click", function(event) {
+		event.stopPropagation();
+	    $(this).closest(".tour").find(".photos").slideToggle();
+	  });
+	  $(".preventDefault").on("click", function(event) {
+		event.preventDefault();
+	    $(this).closest(".tour").find(".photos").slideToggle();
+	  });
+	});
+
+</script>
+</head>
+<body class='lab-1'>
+<div id="all-tours" class="links">
+  <h1>Guided Tours</h1>
+  <ul>
+    <li class="tour usa" data-discount="199">
+      <h2>New York, New York</h2>
+      <span class="details">$1,899 for 7 nights</span>
+      <button class="book">Book Now</button>
+      <a href="#" class="see-photos">See Photos</a>
+      <a href="#" class="stopPropagation">See Photos(stopPropagation)</a>
+      <a href="#" class="preventDefault">See Photos(stopPropagation, preventDefault)</a>
+      <button class="see-photos">See Photos</button>
+      <button class="stopPropagation">See Photos(stopPropagation)</button>
+      <button class="preventDefault">See Photos(stopPropagation, preventDefault)</button>
+      <ul class="photos">
+        <li>
+          <img src="http://try.jquery.com/assets/photos/paris1.jpg">
+          <span>Arc de Triomphe</span>
+        </li>
+        <li>
+          <img src="http://try.jquery.com/assets/photos/paris2.jpg">
+          <span>The Eiffel Tower</span>
+        </li>
+        <li>
+          <img src="http://try.jquery.com/assets/photos/paris3.jpg">
+          <span>Notre Dame de Paris</span>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+</body>
+</html>
